@@ -1,0 +1,8 @@
+import "./App.css";
+import BookTable from "./components/BookTable";
+
+function App() {
+  return <BookTable></BookTable>;
+}
+
+export default App;
