@@ -9,10 +9,10 @@ const info = {
   name: "Prénom NOM",
 };
 
-function Profile() {
+function Profile({ feelingOfTheDay }) {
   return (
     <Card style={{ width: "18rem" }}>
-      <CardImage props={info.imageUrl} />
+      <CardImage props={feelingOfTheDay} />
       <Card.Body>
         <CardName props={info.name}></CardName>
         <CardBio props={info.bio}></CardBio>

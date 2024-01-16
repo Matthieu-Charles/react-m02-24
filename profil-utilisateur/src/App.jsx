@@ -1,8 +1,15 @@
+import { useState } from "react";
 import "./App.css";
-import Profile from "./components/Profile";
 
 function App() {
-  return <Profile></Profile>;
+  const [userInput, setUserInput] = useState("");
+
+  return (
+    <div className="app">
+      <input type="text" onChange={(e) => setUserInput(e.target.value)} />
+      {userInput}
+    </div>
+  );
 }
 
 export default App;
