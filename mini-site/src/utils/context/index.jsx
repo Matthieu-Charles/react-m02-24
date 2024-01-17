@@ -26,9 +26,31 @@ export const BooksProvider = ({ children }) => {
     setBooks(booksOrdered);
   }
 
+  function onDeleteBook(id) {
+    const modifiedBooks = books.filter(
+      (book) => book.id.replace(/^0+/, "") != id
+    );
+    setBooks(modifiedBooks);
+  }
+
+  function onModifyBook(modifiedBook) {
+    const bookToModifyIndex = books.findIndex(
+      (book) => book.id.replace(/^0+/, "") == modifiedBook.id
+    );
+    books[bookToModifyIndex].title = modifiedBook.title;
+    books[bookToModifyIndex].author = modifiedBook.author;
+    books[bookToModifyIndex].pages = modifiedBook.pages;
+  }
+
   return (
     <BooksContext.Provider
-      value={{ books, onSortByAuthorClick, orderAscOrDesc }}
+      value={{
+        books,
+        onSortByAuthorClick,
+        orderAscOrDesc,
+        onDeleteBook,
+        onModifyBook,
+      }}
     >
       {children}
     </BooksContext.Provider>

@@ -12,7 +12,7 @@ function HeaderNav() {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto">
             <Nav.Link as={Link} to="/accueil">
-              Livres
+              Accueil
             </Nav.Link>
             <Nav.Link as={Link} to="/livres">
               Livres
