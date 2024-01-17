@@ -7,10 +7,10 @@ function HeaderNav() {
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container>
-        <Navbar.Brand href="#home">React Mini App</Navbar.Brand>
+        <Navbar.Brand>React Mini App</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="me-auto">
+          <Nav>
             <Nav.Link as={Link} to="/accueil">
               Accueil
             </Nav.Link>
