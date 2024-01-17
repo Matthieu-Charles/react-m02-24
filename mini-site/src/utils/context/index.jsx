@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { createContext, useState } from "react";
+import { createContext, useState, useRef } from "react";
 import { books as bks } from "../../models";
 
 export const BooksContext = createContext();
@@ -19,6 +19,7 @@ function dynamicSort(ascOrDsc) {
 export const BooksProvider = ({ children }) => {
   const [books, setBooks] = useState(bks);
   const [orderAscOrDesc, setorderAscOrDesc] = useState("ASC");
+  const booksRef = useRef(books);
 
   function onSortByAuthorClick() {
     setorderAscOrDesc(orderAscOrDesc === "ASC" ? "DESC" : "ASC");
@@ -42,6 +43,22 @@ export const BooksProvider = ({ children }) => {
     books[bookToModifyIndex].pages = modifiedBook.pages;
   }
 
+  function onCreateBook(newBook) {
+    newBook.id = (books.length + 2).toString();
+    books.push(newBook);
+  }
+
+  function onNameSearch(searchString) {
+    if (searchString) {
+      const modifiedBooks = booksRef.current.filter((book) =>
+        book.title.toUpperCase().includes(searchString.toUpperCase())
+      );
+      setBooks(modifiedBooks);
+    } else {
+      setBooks(booksRef.current);
+    }
+  }
+
   return (
     <BooksContext.Provider
       value={{
@@ -50,6 +67,8 @@ export const BooksProvider = ({ children }) => {
         orderAscOrDesc,
         onDeleteBook,
         onModifyBook,
+        onCreateBook,
+        onNameSearch,
       }}
     >
       {children}
