@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */
 import { createContext, useState, useRef } from "react";
 import { books as bks } from "../../models";
+import { useFetchBooks } from "../hooks";
 
 export const BooksContext = createContext();
 
@@ -17,7 +18,7 @@ function dynamicSort(ascOrDsc) {
 }
 
 export const BooksProvider = ({ children }) => {
-  const [books, setBooks] = useState(bks);
+  const books = useFetchBooks("http://localhost:3000/books");
   const [orderAscOrDesc, setorderAscOrDesc] = useState("ASC");
   const booksRef = useRef(books);
 
