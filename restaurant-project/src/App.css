@@ -22,3 +22,19 @@ nav {
   width: 50vw;
   margin: auto;
 }
+
+.d-flex {
+  gap: 5px;
+}
+
+.card {
+  box-shadow: 0px 5px 3px rgb(201, 199, 199);
+}
+
+.card-meal {
+  width: 30%;
+}
+
+.card:hover {
+  transform: scale(1.01);
+}

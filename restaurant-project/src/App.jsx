@@ -11,6 +11,8 @@ import PresentationPage from "./pages/PresentationPage/PresentationPage";
 import MenuPage from "./pages/MenuPage/MenuPage";
 import FindUsPage from "./pages/FindUsPage/FindUsPage";
 import FooterNav from "./components/FooterNav";
+import { MealsProvider } from "./utils/context/MealsContext";
+import { CartProvider } from "./utils/context/CartContext";
 
 function App() {
   return (
@@ -18,13 +20,17 @@ function App() {
       <Router>
         <HeaderNav />
         <div className="main w-80">
-          <Routes>
-            <Route path="/accueil" element={<Homepage />} />
-            <Route path="/presentation" element={<PresentationPage />} />
-            <Route path="/carte" element={<MenuPage />} />
-            <Route path="/localisation" element={<FindUsPage />} />
-            <Route path="*" element={<Navigate to="/accueil" />} />
-          </Routes>
+          <MealsProvider>
+            <CartProvider>
+              <Routes>
+                <Route path="/accueil" element={<Homepage />} />
+                <Route path="/presentation" element={<PresentationPage />} />
+                <Route path="/carte" element={<MenuPage />} />
+                <Route path="/localisation" element={<FindUsPage />} />
+                <Route path="*" element={<Navigate to="/accueil" />} />
+              </Routes>
+            </CartProvider>
+          </MealsProvider>
         </div>
         <FooterNav />
       </Router>

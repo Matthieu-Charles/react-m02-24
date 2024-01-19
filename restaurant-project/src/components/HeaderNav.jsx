@@ -7,13 +7,15 @@ function HeaderNav() {
   return (
     <Navbar expand="lg" className="p-0">
       <Container>
-        <Navbar.Brand href="accueil" className="p-0">
-          <img
-            src="src/assets/logo_restaurant.jpg"
-            height="60"
-            className="d-inline-block align-top"
-            alt="React Bootstrap logo"
-          />
+        <Navbar.Brand className="p-0">
+          <Link to="/accueil">
+            <img
+              src="src/assets/logo_restaurant.jpg"
+              height="60"
+              className="d-inline-block align-top"
+              alt="React Bootstrap logo"
+            />
+          </Link>
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">

@@ -1,0 +1,77 @@
+{
+  "meals": [
+    {
+      "id": "1",
+      "title": "Salade au Tonton",
+      "country": "Nigeria",
+      "imageLink": "src/assets/meal1.jpg",
+      "presentation": "Le bon petit plaplat du tonton qui a récupéré cette formidable recette d'un ami du Nigéria!",
+      "price": 12
+    },
+    {
+      "id": "2",
+      "title": "Poulet de Tarama",
+      "country": "Ile de Wight",
+      "imageLink": "src/assets/meal2.jpg",
+      "presentation": "Un bon petit poulet tout sympa qui ravira vos papilles",
+      "price": 23
+    },
+    {
+      "id": "3",
+      "title": "La dorade bleue de Jean",
+      "country": "Sautron",
+      "imageLink": "src/assets/meal3.jpg",
+      "presentation": "Une dorade, bien cuite, assaissonée à point nommé. Toute bleu, d'où son nom. Et c'est une idée de Jean",
+      "price": 41
+    },
+    {
+      "id": "4",
+      "title": "La viande hachée et son oeuf",
+      "country": "Cheylade",
+      "imageLink": "src/assets/meal4.jpg",
+      "presentation": "Une viande crue avec son oeuf dessus. Un classique, un indémodable indémodé. Venez goûter le Cantal",
+      "price": 16
+    },
+    {
+      "id": "5",
+      "title": "Topinanbourgs et Poisson",
+      "country": "Crac'h",
+      "imageLink": "src/assets/meal5.jpg",
+      "presentation": "Des patates de luxe avec un poisson qui l'est tout autant. Ce sont les 4 saisons réunies pour vous ici",
+      "price": 11
+    }
+  ],
+  "cart": [
+    {
+      "id": "1",
+      "title": "Salade au Tonton",
+      "country": "Nigeria",
+      "imageLink": "src/assets/meal1.jpg",
+      "presentation": "Le bon petit plaplat du tonton qui a récupéré cette formidable recette d'un ami du Nigéria!",
+      "price": 12,
+      "quantity": 1
+    },
+    {
+      "id": "2",
+      "title": "Poulet de Tarama",
+      "country": "Ile de Wight",
+      "imageLink": "src/assets/meal2.jpg",
+      "presentation": "Un bon petit poulet tout sympa qui ravira vos papilles",
+      "price": 23,
+      "quantity": 1
+    },
+    {
+      "quantity": 4,
+      "id": "3"
+    },
+    {
+      "id": "3",
+      "title": "La dorade bleue de Jean",
+      "country": "Sautron",
+      "imageLink": "src/assets/meal3.jpg",
+      "presentation": "Une dorade, bien cuite, assaissonée à point nommé. Toute bleu, d'où son nom. Et c'est une idée de Jean",
+      "price": 41,
+      "quantity": 1
+    }
+  ]
+}
