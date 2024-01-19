@@ -22,7 +22,7 @@ function BookTable() {
         </tr>
       </thead>
       <tbody>
-        {books.map((book) => (
+        {books.data.map((book) => (
           <BookRow key={book.id} book={book} />
         ))}
       </tbody>
