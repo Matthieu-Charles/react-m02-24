@@ -38,3 +38,11 @@ nav {
 .card:hover {
   transform: scale(1.01);
 }
+
+.error {
+  color: red;
+}
+
+.total {
+  font-weight: bold;
+}

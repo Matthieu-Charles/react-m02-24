@@ -7,7 +7,7 @@ import { CartContext } from "../../utils/context/CartContext";
 import { Link } from "react-router-dom";
 
 function Cart() {
-  const { cartItems, onDeleteItemOfCart } = useContext(CartContext);
+  const { cartItems, cartValue, onDeleteItemOfCart } = useContext(CartContext);
 
   console.log(cartItems);
 
@@ -17,16 +17,25 @@ function Cart() {
       <Card.Body>
         <ListGroup variant="flush">
           {cartItems?.map((cartItem) => (
-            <ListGroup.Item key={cartItem?.id}>
-              <CloseButton
-                className="btn-sm me-2"
-                onClick={() => onDeleteItemOfCart(cartItem)}
-              ></CloseButton>
-              {cartItem?.title} <br></br>
-              <span className="bold">X {cartItem?.quantity}</span>
+            <ListGroup.Item key={cartItem?.id} className="d-flex">
+              <div>
+                {" "}
+                <CloseButton
+                  className="btn-sm me-2"
+                  onClick={() => onDeleteItemOfCart(cartItem)}
+                ></CloseButton>
+              </div>
+              <div>
+                {" "}
+                <span className="bold">{cartItem?.quantity} x </span>
+                {cartItem?.title}
+              </div>
             </ListGroup.Item>
           ))}
         </ListGroup>
+        <div className="mt-4">
+          <p className="total text-end pe-2">Total: {cartValue} €</p>
+        </div>
         <div className="d-flex justify-content-center py-3">
           <Link to="/commande">
             <Button variant="primary">Passer la commande</Button>
