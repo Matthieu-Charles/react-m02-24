@@ -18,11 +18,11 @@ import { CartProvider } from "./utils/context/CartContext";
 function App() {
   return (
     <div className="app">
-      <Router>
-        <HeaderNav />
-        <div className="main w-80">
-          <MealsProvider>
-            <CartProvider>
+      <MealsProvider>
+        <CartProvider>
+          <Router>
+            <HeaderNav />
+            <div className="main w-80">
               <Routes>
                 <Route path="/accueil" element={<Homepage />} />
                 <Route path="/presentation" element={<PresentationPage />} />
@@ -31,11 +31,11 @@ function App() {
                 <Route path="/commande" element={<OrderPage />} />
                 <Route path="*" element={<Navigate to="/accueil" />} />
               </Routes>
-            </CartProvider>
-          </MealsProvider>
-        </div>
-        <FooterNav />
-      </Router>
+            </div>
+            <FooterNav />
+          </Router>
+        </CartProvider>
+      </MealsProvider>
     </div>
   );
 }

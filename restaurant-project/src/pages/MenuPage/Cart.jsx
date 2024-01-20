@@ -9,8 +9,6 @@ import { Link } from "react-router-dom";
 function Cart() {
   const { cartItems, cartValue, onDeleteItemOfCart } = useContext(CartContext);
 
-  console.log(cartItems);
-
   return (
     <Card>
       <Card.Header>Votre Panier</Card.Header>

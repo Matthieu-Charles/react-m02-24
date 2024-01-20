@@ -3,8 +3,12 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { CartContext } from "../utils/context/CartContext";
 
 function HeaderNav() {
+  const { cartItems, cartValue, onDeleteItemOfCart } = useContext(CartContext);
+
   return (
     <Navbar expand="lg" className="p-0">
       <Container>
@@ -34,7 +38,7 @@ function HeaderNav() {
         </Navbar.Collapse>
         <Nav>
           <Nav.Link as={Link} to="/commande">
-            <Button variant="primary">Mon Panier</Button>
+            <Button variant="secondary">🛒 Mon Panier : {cartValue}€</Button>
           </Nav.Link>
         </Nav>
       </Container>
