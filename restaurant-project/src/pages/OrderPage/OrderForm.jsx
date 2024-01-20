@@ -1,16 +1,29 @@
-import { useForm } from "react-hook-form";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Modal from "react-bootstrap/Modal";
 
 function OrderForm() {
+  const [show, setShow] = useState(false);
+  const navigate = useNavigate();
+
+  const handleClose = () => {
+    setShow(false);
+    navigate("accueil");
+  };
+  const handleShow = () => setShow(true);
   const {
     handleSubmit,
     register,
     formState: { errors },
   } = useForm();
 
-  const onValid = (data) => console.log("Valide! : ", data);
+  const onValid = (data) => {
+    console.log("Valide! : ", data);
+    handleShow();
+  };
   const onError = (errors) => {
     console.log("Errors: ", errors);
   };
@@ -98,6 +111,25 @@ function OrderForm() {
           Valider ma commande
         </Button>
       </Form>
+      <>
+        {/* <Button variant="primary" onClick={handleShow}>
+          Launch demo modal
+        </Button> */}
+
+        <Modal show={show} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Votre commande est acceptée!</Modal.Title>
+          </Modal.Header>
+          <Modal.Body>
+            Vous serez bientôt contacté pour les modalités de livraison!
+          </Modal.Body>
+          <Modal.Footer>
+            <Button variant="secondary" onClick={handleClose}>
+              Fermer
+            </Button>
+          </Modal.Footer>
+        </Modal>
+      </>
     </div>
   );
 }

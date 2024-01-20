@@ -70,5 +70,36 @@
       "price": 11
     }
   ],
-  "cart": []
+  "cart": [
+    {
+      "id": "2",
+      "title": "Poulet de Tarama",
+      "country": "Ile de Wight",
+      "imageLink": "src/assets/meal2.jpg",
+      "presentation": "Un bon petit poulet tout sympa qui ravira vos papilles",
+      "ingredients": [
+        "poulet",
+        "saumon",
+        "zeste de citron",
+        "pain"
+      ],
+      "price": 23,
+      "quantity": 1
+    },
+    {
+      "id": "3",
+      "title": "La dorade bleue de Jean",
+      "country": "Sautron",
+      "imageLink": "src/assets/meal3.jpg",
+      "presentation": "Une dorade, bien cuite, assaissonée à point nommé. Toute bleu, d'où son nom. Et c'est une idée de Jean",
+      "ingredients": [
+        "dorade",
+        "bleue d'auvergne",
+        "beaufort",
+        "sel"
+      ],
+      "price": 41,
+      "quantity": 1
+    }
+  ]
 }
