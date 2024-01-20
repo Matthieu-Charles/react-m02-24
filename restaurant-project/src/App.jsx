@@ -9,6 +9,7 @@ import HeaderNav from "./components/HeaderNav";
 import Homepage from "./pages/Homepage/Homepage";
 import PresentationPage from "./pages/PresentationPage/PresentationPage";
 import MenuPage from "./pages/MenuPage/MenuPage";
+import OrderPage from "./pages/OrderPage/OrderPage";
 import FindUsPage from "./pages/FindUsPage/FindUsPage";
 import FooterNav from "./components/FooterNav";
 import { MealsProvider } from "./utils/context/MealsContext";
@@ -27,6 +28,7 @@ function App() {
                 <Route path="/presentation" element={<PresentationPage />} />
                 <Route path="/carte" element={<MenuPage />} />
                 <Route path="/localisation" element={<FindUsPage />} />
+                <Route path="/commande" element={<OrderPage />} />
                 <Route path="*" element={<Navigate to="/accueil" />} />
               </Routes>
             </CartProvider>

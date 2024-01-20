@@ -1,5 +1,6 @@
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
+import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
 import { Link } from "react-router-dom";
 
@@ -31,6 +32,11 @@ function HeaderNav() {
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>
+        <Nav>
+          <Nav.Link as={Link} to="/commande">
+            <Button variant="primary">Mon Panier</Button>
+          </Nav.Link>
+        </Nav>
       </Container>
     </Navbar>
   );
