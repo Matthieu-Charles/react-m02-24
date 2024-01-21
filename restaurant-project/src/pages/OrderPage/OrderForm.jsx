@@ -112,10 +112,6 @@ function OrderForm() {
         </Button>
       </Form>
       <>
-        {/* <Button variant="primary" onClick={handleShow}>
-          Launch demo modal
-        </Button> */}
-
         <Modal show={show} onHide={handleClose}>
           <Modal.Header closeButton>
             <Modal.Title>Votre commande est acceptée!</Modal.Title>

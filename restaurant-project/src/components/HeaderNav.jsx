@@ -34,6 +34,9 @@ function HeaderNav() {
             <Nav.Link as={Link} to="/localisation">
               Localisation
             </Nav.Link>
+            <Nav.Link as={Link} to="/gestion">
+              Gestion
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Nav>

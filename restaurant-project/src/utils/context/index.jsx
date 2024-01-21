@@ -15,6 +15,7 @@ export async function getItems(url) {
 }
 
 export async function addItem(url = "", item) {
+  console.log(item);
   try {
     const reponse = await fetch(url, {
       method: "POST",
