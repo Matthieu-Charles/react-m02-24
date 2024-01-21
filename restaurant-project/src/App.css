@@ -35,7 +35,8 @@ nav {
   width: 30%;
 }
 
-.card:hover {
+.card:hover,
+.logo:hover {
   transform: scale(1.01);
 }
 
