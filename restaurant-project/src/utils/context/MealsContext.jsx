@@ -1,5 +1,5 @@
-import { createContext, useState, useEffect, useRef } from "react";
-import { getItems, addItem } from ".";
+import { createContext, useState, useEffect } from "react";
+import { addItem, modifyItem } from ".";
 
 export const MealsContext = createContext();
 
@@ -21,13 +21,11 @@ export const MealsProvider = ({ children }) => {
   const [orderAscOrDesc, setMealsAscOrDesc] = useState("ASC");
 
   useEffect(() => {
-    console.log("Dans useEffect");
     fetch("http://localhost:3000/meals")
       .then((res) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setMeals(data);
       });
   }, [call]);
@@ -38,48 +36,35 @@ export const MealsProvider = ({ children }) => {
     setMeals(mealsOrdered);
   }
 
-  // function onDeleteBook(id) {
-  //   const modifiedBooks = books.filter(
-  //     (book) => book.id.replace(/^0+/, "") != id
-  //   );
-  //   setBooks(modifiedBooks);
-  // }
-
-  // function onModifyBook(modifiedBook) {
-  //   const bookToModifyIndex = books.findIndex(
-  //     (book) => book.id.replace(/^0+/, "") == modifiedBook.id
-  //   );
-  //   books[bookToModifyIndex].title = modifiedBook.title;
-  //   books[bookToModifyIndex].author = modifiedBook.author;
-  //   books[bookToModifyIndex].pages = modifiedBook.pages;
-  // }
-
-  function onCreateMeal(newMeal) {
-    console.log("dans onCreateMeal : ", newMeal);
-    //a compléter :
-    const ingredients = [];
-    ingredients.push(newMeal.ingredient1);
-    newMeal.ingredient2 != "" ? ingredients.push(newMeal.ingredient2) : "";
-    newMeal.ingredient3 != "" ? ingredients.push(newMeal.ingredient3) : "";
-    newMeal.ingredient4 != "" ? ingredients.push(newMeal.ingredient4) : "";
-    console.log(ingredients);
-    newMeal.ingredients = ingredients;
-    // newMeal.id = meals.length + 1;
-    console.log(newMeal);
-    //id (auto), imageLink, traiter les ingrédients
-    addItem("http://localhost:3000/meals", newMeal);
+  async function onModifyMeal(modifiedMeal) {
+    modifiedMeal = mapIngredients(modifiedMeal);
+    await modifyItem(
+      `http://localhost:3000/meals/${modifiedMeal.id}`,
+      modifiedMeal
+    );
+    setCall(!call);
   }
 
-  // function onNameSearch(searchString) {
-  //   if (searchString) {
-  //     const modifiedBooks = booksRef.current.filter((book) =>
-  //       book.title.toUpperCase().includes(searchString.toUpperCase())
-  //     );
-  //     setBooks(modifiedBooks);
-  //   } else {
-  //     setBooks(booksRef.current);
-  //   }
-  // }
+  async function onCreateMeal(newMeal) {
+    newMeal = mapIngredients(newMeal);
+    newMeal.imageLink = `src/assets/meal${Math.floor(Math.random() * 7)}.jpg`;
+    await addItem("http://localhost:3000/meals", newMeal);
+    setCall(!call);
+  }
+
+  function mapIngredients(meal) {
+    const ingredients = [];
+    ingredients.push(meal.ingredient1);
+    meal.ingredient2 != "" ? ingredients.push(meal.ingredient2) : "";
+    meal.ingredient3 != "" ? ingredients.push(meal.ingredient3) : "";
+    meal.ingredient4 != "" ? ingredients.push(meal.ingredient4) : "";
+    delete meal.ingredient1;
+    delete meal.ingredient2;
+    delete meal.ingredient3;
+    delete meal.ingredient4;
+    meal.ingredients = ingredients;
+    return meal;
+  }
 
   return (
     <MealsContext.Provider
@@ -87,10 +72,9 @@ export const MealsProvider = ({ children }) => {
         meals,
         onSortByNameClick,
         orderAscOrDesc,
-        // onDeleteBook,
-        // onModifyBook,
+        onModifyMeal,
         onCreateMeal,
-        // onNameSearch,
+        call,
       }}
     >
       {children}

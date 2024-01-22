@@ -16,6 +16,7 @@ import FooterNav from "./components/FooterNav";
 import { MealsProvider } from "./utils/context/MealsContext";
 import { CartProvider } from "./utils/context/CartContext";
 import MealCreationPage from "./pages/MealCreationPage/MealCreationPage";
+import MealModificationPage from "./pages/MealModificationPage/MealCreationPage";
 
 function App() {
   return (
@@ -33,6 +34,10 @@ function App() {
                 <Route path="/commande" element={<OrderPage />} />
                 <Route path="/gestion" element={<MenuModificationPage />} />
                 <Route path="/new" element={<MealCreationPage />} />
+                <Route
+                  path="/meal/modification/:id"
+                  element={<MealModificationPage />}
+                />
                 <Route path="*" element={<Navigate to="/accueil" />} />
               </Routes>
             </div>

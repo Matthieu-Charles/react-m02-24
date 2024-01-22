@@ -9,7 +9,6 @@ export const CartProvider = ({ children }) => {
   const [cartValue, setCartValue] = useState(0);
 
   useEffect(() => {
-    console.log("Dans useEffect");
     fetch("http://localhost:3000/cart")
       .then((res) => {
         return res.json();
@@ -21,18 +20,14 @@ export const CartProvider = ({ children }) => {
   }, [call]);
 
   useEffect(() => {
-    console.log("Dans useEffect2");
     calculateValueOfCart();
   }, [cartItems]);
 
   function calculateValueOfCart() {
-    console.log("calculateValueOfCart");
     let value = 0;
-    console.log(cartItems);
     cartItems.forEach(
       (cartItem) => (value = value + cartItem.quantity * cartItem.price)
     );
-    console.log(value);
     setCartValue(value);
   }
 

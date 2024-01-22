@@ -1,3 +1,19 @@
+export async function getItem(url, id) {
+  const res = await fetch(url + `/${id}`);
+  try {
+    if (res.ok) {
+      const dataReceived = await res.json();
+      if (dataReceived) {
+        return dataReceived;
+      }
+    } else {
+      console.log("pas de data");
+    }
+  } catch (e) {
+    console.error("Impossible de récupérer la resource");
+  }
+}
+
 export async function getItems(url) {
   const res = await fetch(url);
   try {
@@ -15,7 +31,6 @@ export async function getItems(url) {
 }
 
 export async function addItem(url = "", item) {
-  console.log(item);
   try {
     const reponse = await fetch(url, {
       method: "POST",

@@ -13,7 +13,6 @@ function MealCreation() {
   const handleOnClick = () => navigate("/carte");
 
   const onValid = (data) => {
-    console.log("Valide! : ", data);
     onCreateMeal(data);
   };
   const onError = (errors) => {

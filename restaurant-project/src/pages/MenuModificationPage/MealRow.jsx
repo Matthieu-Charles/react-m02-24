@@ -1,11 +1,7 @@
-import { useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
 import Nav from "react-bootstrap/Nav";
-import { MealsContext } from "../../utils/context/MealsContext";
 
 function MealRow({ meal }) {
-  const { meals } = useContext(MealsContext);
-
   return (
     <tr>
       <td>
@@ -16,14 +12,10 @@ function MealRow({ meal }) {
       <td>{meal.country}</td>
       <td>{meal.category}</td>
       <td>
-        <Nav.Link
-          as={Link}
-          to={`/meal/${meal.id.replace(/^0+/, "")}/modification`}
-        >
+        <Nav.Link as={Link} to={`/meal/modification/${meal.id}`}>
           ✏️
         </Nav.Link>
       </td>
-      {/* <td onClick={() => onDeleteBook(book.id.replace(/^0+/, ""))}>❌</td> */}
     </tr>
   );
 }

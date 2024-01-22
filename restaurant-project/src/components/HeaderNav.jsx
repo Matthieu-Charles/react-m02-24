@@ -18,7 +18,7 @@ function HeaderNav() {
               src="src/assets/logo_restaurant.jpg"
               height="60"
               className="d-inline-block align-top"
-              alt="React Bootstrap logo"
+              alt="Think Restaurant logo"
             />
           </Link>
         </Navbar.Brand>

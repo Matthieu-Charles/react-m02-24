@@ -9,8 +9,6 @@ function MenuModificationPage() {
   const { meals, orderAscOrDesc, onSortByNameClick } = useContext(MealsContext);
   const navigate = useNavigate();
 
-  console.log(meals);
-
   return (
     <>
       <Button className="primary my-4" onClick={() => navigate("/new")}>
