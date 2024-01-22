@@ -2,12 +2,25 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../utils/context/CartContext";
+import { AuthContext } from "../utils/context/authentication/AuthProvider";
 
 function HeaderNav() {
-  const { cartItems, cartValue, onDeleteItemOfCart } = useContext(CartContext);
+  const { cartValue } = useContext(CartContext);
+  const { user, logOut, loading } = useContext(AuthContext);
+
+  const navigate = useNavigate();
+
+  const handleSignOut = () => {
+    logOut()
+      .then(() => {
+        console.log("User logged out successfully");
+        navigate("/login");
+      })
+      .catch((error) => console.error(error));
+  };
 
   return (
     <Navbar expand="lg" className="p-0">
@@ -34,9 +47,11 @@ function HeaderNav() {
             <Nav.Link as={Link} to="/localisation">
               Localisation
             </Nav.Link>
-            <Nav.Link as={Link} to="/gestion">
-              Gestion
-            </Nav.Link>
+            {user && (
+              <Nav.Link as={Link} to="/gestion">
+                Gestion
+              </Nav.Link>
+            )}
           </Nav>
         </Navbar.Collapse>
         <Nav>
@@ -44,6 +59,23 @@ function HeaderNav() {
             <Button variant="secondary">🛒 Mon Panier : {cartValue}€</Button>
           </Nav.Link>
         </Nav>
+        {!user && (
+          <>
+            <Nav.Link as={Link} to="/login">
+              <Button variant="primary mx-1">Se connecter</Button>
+            </Nav.Link>
+            <Nav.Link as={Link} to="/signup">
+              <Button variant="secondary mx-1">S'inscrire</Button>
+            </Nav.Link>
+          </>
+        )}
+        {user && (
+          <Nav.Link as={Link} to="/logout">
+            <Button variant="danger" onClick={handleSignOut}>
+              Se déconnecter
+            </Button>
+          </Nav.Link>
+        )}
       </Container>
     </Navbar>
   );

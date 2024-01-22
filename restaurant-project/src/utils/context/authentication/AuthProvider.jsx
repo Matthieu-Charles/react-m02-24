@@ -1,15 +1,16 @@
-import { createUserWithEmailAndPassword } from "firebase";
-//   onAuthStateChanged,
-//   signInWithEmailAndPassword,
-//   signOut from
-
+import {
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+  signOut,
+} from "firebase/auth";
 import { createContext, useEffect, useState } from "react";
 import PropTypes from "prop-types";
-import { auth } from "./../../../firebase.config";
+import auth from "../../../firebase.config";
 
 export const AuthContext = createContext(null);
 
-export const AuthProvider = ({ children }) => {
+const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
@@ -51,3 +52,9 @@ export const AuthProvider = ({ children }) => {
     <AuthContext.Provider value={authValue}>{children}</AuthContext.Provider>
   );
 };
+
+AuthProvider.propTypes = {
+  children: PropTypes.node.isRequired,
+};
+
+export default AuthProvider;

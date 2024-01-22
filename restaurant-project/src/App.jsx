@@ -18,13 +18,16 @@ import { CartProvider } from "./utils/context/CartContext";
 import MealCreationPage from "./pages/MealCreationPage/MealCreationPage";
 import MealModificationPage from "./pages/MealModificationPage/MealCreationPage";
 import AuthProvider from "./utils/context/authentication/AuthProvider";
+import Login from "./utils/context/authentication/Login";
+import SignUp from "./utils/context/authentication/SignUp";
+import PrivateRoute from "./utils/context/authentication/PrivateRoute";
 
 function App() {
   return (
     <div className="app">
-      <AuthProvider>
-        <MealsProvider>
-          <CartProvider>
+      <MealsProvider>
+        <CartProvider>
+          <AuthProvider>
             <Router>
               <HeaderNav />
               <div className="main w-80">
@@ -34,20 +37,33 @@ function App() {
                   <Route path="/carte" element={<MenuPage />} />
                   <Route path="/localisation" element={<FindUsPage />} />
                   <Route path="/commande" element={<OrderPage />} />
-                  <Route path="/gestion" element={<MenuModificationPage />} />
+                  <Route
+                    path="/gestion"
+                    element={
+                      <PrivateRoute>
+                        <MenuModificationPage />
+                      </PrivateRoute>
+                    }
+                  />
                   <Route path="/new" element={<MealCreationPage />} />
+                  <Route path="/login" element={<Login />} />
+                  <Route path="/signup" element={<SignUp />} />
                   <Route
                     path="/meal/modification/:id"
-                    element={<MealModificationPage />}
+                    element={
+                      <PrivateRoute>
+                        <MealModificationPage />
+                      </PrivateRoute>
+                    }
                   />
                   <Route path="*" element={<Navigate to="/accueil" />} />
                 </Routes>
               </div>
               <FooterNav />
             </Router>
-          </CartProvider>
-        </MealsProvider>
-      </AuthProvider>
+          </AuthProvider>
+        </CartProvider>
+      </MealsProvider>
     </div>
   );
 }
