@@ -17,34 +17,37 @@ import { MealsProvider } from "./utils/context/MealsContext";
 import { CartProvider } from "./utils/context/CartContext";
 import MealCreationPage from "./pages/MealCreationPage/MealCreationPage";
 import MealModificationPage from "./pages/MealModificationPage/MealCreationPage";
+import AuthProvider from "./utils/context/authentication/AuthProvider";
 
 function App() {
   return (
     <div className="app">
-      <MealsProvider>
-        <CartProvider>
-          <Router>
-            <HeaderNav />
-            <div className="main w-80">
-              <Routes>
-                <Route path="/accueil" element={<Homepage />} />
-                <Route path="/presentation" element={<PresentationPage />} />
-                <Route path="/carte" element={<MenuPage />} />
-                <Route path="/localisation" element={<FindUsPage />} />
-                <Route path="/commande" element={<OrderPage />} />
-                <Route path="/gestion" element={<MenuModificationPage />} />
-                <Route path="/new" element={<MealCreationPage />} />
-                <Route
-                  path="/meal/modification/:id"
-                  element={<MealModificationPage />}
-                />
-                <Route path="*" element={<Navigate to="/accueil" />} />
-              </Routes>
-            </div>
-            <FooterNav />
-          </Router>
-        </CartProvider>
-      </MealsProvider>
+      <AuthProvider>
+        <MealsProvider>
+          <CartProvider>
+            <Router>
+              <HeaderNav />
+              <div className="main w-80">
+                <Routes>
+                  <Route path="/accueil" element={<Homepage />} />
+                  <Route path="/presentation" element={<PresentationPage />} />
+                  <Route path="/carte" element={<MenuPage />} />
+                  <Route path="/localisation" element={<FindUsPage />} />
+                  <Route path="/commande" element={<OrderPage />} />
+                  <Route path="/gestion" element={<MenuModificationPage />} />
+                  <Route path="/new" element={<MealCreationPage />} />
+                  <Route
+                    path="/meal/modification/:id"
+                    element={<MealModificationPage />}
+                  />
+                  <Route path="*" element={<Navigate to="/accueil" />} />
+                </Routes>
+              </div>
+              <FooterNav />
+            </Router>
+          </CartProvider>
+        </MealsProvider>
+      </AuthProvider>
     </div>
   );
 }
