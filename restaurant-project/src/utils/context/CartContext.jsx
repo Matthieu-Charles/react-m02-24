@@ -14,7 +14,6 @@ export const CartProvider = ({ children }) => {
         return res.json();
       })
       .then((data) => {
-        console.log(data);
         setCartItems(data);
       });
   }, [call]);

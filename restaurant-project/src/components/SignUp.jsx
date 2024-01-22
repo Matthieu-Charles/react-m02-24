@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { AuthContext } from "./AuthProvider";
+import { AuthContext } from "../utils/context/authentication/AuthProvider";
 import { updateProfile } from "firebase/auth";
 import { useNavigate } from "react-router-dom";
 import Button from "react-bootstrap/Button";

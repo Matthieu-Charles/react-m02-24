@@ -1,5 +1,7 @@
 import Carousel from "react-bootstrap/Carousel";
 import Button from "react-bootstrap/Button";
+import Nav from "react-bootstrap/Nav";
+import { Link } from "react-router-dom";
 
 function Homepage() {
   return (
@@ -16,7 +18,9 @@ function Homepage() {
         </Carousel.Item>
       </Carousel>
       <div className="container d-flex justify-content-center">
-        <Button className="my-3 btn-secondary">Passer Commande !</Button>
+        <Nav.Link as={Link} to="/commande">
+          <Button className="my-3 btn-secondary">Passer Commande !</Button>
+        </Nav.Link>
       </div>
     </div>
   );

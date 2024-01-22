@@ -24,7 +24,7 @@ nav {
 }
 
 .d-flex {
-  gap: 5px;
+  gap: 10px;
 }
 
 .card {
@@ -46,4 +46,31 @@ nav {
 
 .total {
   font-weight: bold;
+}
+
+canvas {
+  position: absolute;
+  z-index: -1;
+  height: 100vh;
+}
+
+.btn {
+  border-radius: 0% !important;
+  box-shadow: 1px 1px 3px grey;
+}
+
+.btn:hover{
+  transform: scale(1.05);
+}
+
+.btn-secondary {
+  background-color: white !important;
+  border: none !important;
+  color: black !important;
+}
+
+.btn-primary {
+  background-color: black !important;
+  border: none !important;
+  color: #ffcc00 !important;
 }

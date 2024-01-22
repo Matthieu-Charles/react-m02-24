@@ -14,7 +14,7 @@ function MenuPage() {
             <MealCard key={meal.id} meal={meal} />
           ))}
         </div>
-        <div className="col-3">
+        <div className="col-3 sticky-top">
           <Cart />
         </div>
       </div>
