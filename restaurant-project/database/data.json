@@ -133,7 +133,38 @@
       ],
       "price": 12,
       "category": "plat",
-      "quantity": 1
+      "quantity": 2
+    },
+    {
+      "id": "f5d4",
+      "title": "Foie gras et ses croutons",
+      "country": "Corée du sud",
+      "imageLink": "src/assets/meal7.jpg",
+      "presentation": "Un foie gras délicieux marinée dans l'eau de cuisson des topinambours",
+      "ingredients": [
+        "oeuf",
+        "lait",
+        "sucre"
+      ],
+      "price": 27,
+      "category": "entrée",
+      "quantity": 5
+    },
+    {
+      "id": "5as3",
+      "title": "La dorade bleue de JeanJean",
+      "country": "Sautron",
+      "imageLink": "src/assets/meal3.jpg",
+      "presentation": "Une dorade, bien cuite, assaissonée à point nommé. Toute bleu, d'où son nom. Et c'est une idée de Jean",
+      "ingredients": [
+        "dorade",
+        "bleue d'auvergne",
+        "beaufort",
+        "sel"
+      ],
+      "price": 41,
+      "category": "plat",
+      "quantity": 30
     },
     {
       "id": "q45z",
@@ -149,7 +180,22 @@
       ],
       "price": "28",
       "category": "dessert",
-      "quantity": 2
+      "quantity": 10
+    },
+    {
+      "id": "s547",
+      "title": "Ile flottante",
+      "country": "Colombie",
+      "imageLink": "src/assets/meal6.jpg",
+      "presentation": "Une exquise île flottante comme on en fait qu'en Colombie. Notre chef garde secret la composition de la poudre blanche délicatement saupoudrée sur l'île",
+      "ingredients": [
+        "oeuf",
+        "lait",
+        "sucre"
+      ],
+      "price": 27,
+      "category": "dessert",
+      "quantity": 6
     },
     {
       "id": "a687",
@@ -165,7 +211,7 @@
       ],
       "price": 11,
       "category": "plat",
-      "quantity": 3
+      "quantity": 5
     },
     {
       "id": "45ea",
@@ -181,22 +227,7 @@
       ],
       "price": 16,
       "category": "plat",
-      "quantity": 3
-    },
-    {
-      "id": "s547",
-      "title": "Ile flottante",
-      "country": "Colombie",
-      "imageLink": "src/assets/meal6.jpg",
-      "presentation": "Une exquise île flottante comme on en fait qu'en Colombie. Notre chef garde secret la composition de la poudre blanche délicatement saupoudrée sur l'île",
-      "ingredients": [
-        "oeuf",
-        "lait",
-        "sucre"
-      ],
-      "price": 27,
-      "category": "dessert",
-      "quantity": 3
+      "quantity": 6
     },
     {
       "id": "5862",
@@ -212,21 +243,6 @@
       ],
       "imageLink": "src/assets/meal1.jpg",
       "quantity": 3
-    },
-    {
-      "id": "f5d4",
-      "title": "Foie gras et ses croutons",
-      "country": "Corée du sud",
-      "imageLink": "src/assets/meal7.jpg",
-      "presentation": "Un foie gras délicieux marinée dans l'eau de cuisson des topinambours",
-      "ingredients": [
-        "oeuf",
-        "lait",
-        "sucre"
-      ],
-      "price": 27,
-      "category": "entrée",
-      "quantity": 2
     }
   ]
 }

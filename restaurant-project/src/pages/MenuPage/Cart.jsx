@@ -6,7 +6,7 @@ import ListGroup from "react-bootstrap/ListGroup";
 import { CartContext } from "../../utils/context/CartContext";
 import { Link } from "react-router-dom";
 
-function Cart() {
+function Cart({ isOrderContext }) {
   const { cartItems, cartValue, onDeleteItemOfCart } = useContext(CartContext);
 
   return (
@@ -34,11 +34,17 @@ function Cart() {
         <div className="mt-4">
           <p className="total text-end pe-2">Total: {cartValue} €</p>
         </div>
-        <div className="d-flex justify-content-center py-3">
-          <Link to="/commande">
-            <Button variant="primary">Passer la commande</Button>
-          </Link>
-        </div>
+        {isOrderContext ? (
+          ""
+        ) : (
+          <>
+            <div className="d-flex justify-content-center py-3">
+              <Link to="/commande">
+                <Button variant="primary">Passer la commande</Button>
+              </Link>
+            </div>
+          </>
+        )}
       </Card.Body>
     </Card>
   );

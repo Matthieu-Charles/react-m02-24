@@ -2,14 +2,17 @@ import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import Navbar from "react-bootstrap/Navbar";
+import Form from "react-bootstrap/Form";
 import { Link, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import { CartContext } from "../utils/context/CartContext";
 import { AuthContext } from "../utils/context/authentication/AuthProvider";
+import { ConfettiContext } from "../utils/context/ConfettiContext";
 
 function HeaderNav() {
   const { cartValue } = useContext(CartContext);
   const { user, logOut, loading } = useContext(AuthContext);
+  const { confetti, onClickOnSwitch } = useContext(ConfettiContext);
 
   const navigate = useNavigate();
 
@@ -35,6 +38,9 @@ function HeaderNav() {
             />
           </Link>
         </Navbar.Brand>
+        <Form onClick={onClickOnSwitch}>
+          <Form.Check type="switch" id="custom-switch" label="" />
+        </Form>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav>
@@ -59,6 +65,7 @@ function HeaderNav() {
             <Button variant="secondary">🛒 Mon Panier : {cartValue}€</Button>
           </Nav.Link>
         </Nav>
+        <Nav></Nav>
         {!user && (
           <>
             <Nav.Link as={Link} to="/login">

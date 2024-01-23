@@ -59,7 +59,7 @@ canvas {
   box-shadow: 1px 1px 3px grey;
 }
 
-.btn:hover{
+.btn:hover {
   transform: scale(1.05);
 }
 
@@ -73,4 +73,26 @@ canvas {
   background-color: black !important;
   border: none !important;
   color: #ffcc00 !important;
+}
+
+.form-check {
+  margin: 0 !important;
+}
+
+.form-check-input:not(:checked) {
+  animation: glow 1s infinite alternate;
+}
+
+.form-check-input:checked {
+  background-color: black !important;
+  border-color: black !important;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0 0 10px -10px #8f0404;
+  }
+  to {
+    box-shadow: 0 0 20px 20px #ffcc00;
+  }
 }

@@ -5,7 +5,7 @@ function OrderPage() {
   return (
     <div className="my-5 container d-flex justify-content-between">
       <div className="col-3">
-        <Cart />
+        <Cart isOrderContext={true} />
       </div>
       <div className="col-7">
         <OrderForm />
