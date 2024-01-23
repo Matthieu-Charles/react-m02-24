@@ -38,7 +38,7 @@ function FooterNav() {
         </li>
         {user && (
           <li className="nav-item">
-            <Link to="/" className="nav-link px-2 text-muted">
+            <Link to="/gestion" className="nav-link px-2 text-muted">
               Gestion des stocks
             </Link>
           </li>

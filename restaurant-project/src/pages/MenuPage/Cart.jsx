@@ -23,7 +23,7 @@ function Cart({ isOrderContext }) {
             <ListGroup.Item key={cartItem?.id} className="d-flex container">
               <div>
                 <CloseButton
-                  className="btn-sm me-2"
+                  className="btn-sm"
                   onClick={() => onDeleteItemOfCart(cartItem)}
                 ></CloseButton>
               </div>

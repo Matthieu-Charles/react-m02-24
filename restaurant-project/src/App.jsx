@@ -16,7 +16,7 @@ import FooterNav from "./components/FooterNav";
 import { MealsProvider } from "./utils/context/MealsContext";
 import { CartProvider } from "./utils/context/CartContext";
 import MealCreationPage from "./pages/MealCreationPage/MealCreationPage";
-import MealModificationPage from "./pages/MealModificationPage/MealCreationPage";
+import MealModificationPage from "./pages/MealModificationPage/MealModificationPage";
 import AuthProvider from "./utils/context/authentication/AuthProvider";
 import Login from "./components/Login";
 import SignUp from "./components/SignUp";
@@ -29,7 +29,6 @@ function App() {
   const { confetti, onClickConfetti } = useContext(ConfettiContext);
 
   useEffect(() => {
-    console.log("useEffet App avec confetti = ", confetti);
     if (confetti) {
       const confettiSettings = {
         target: "confetti-holder",

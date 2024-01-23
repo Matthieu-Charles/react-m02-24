@@ -24,7 +24,6 @@ const SignUp = () => {
           displayName: name,
         });
         navigate("/");
-        console.log(result);
       })
       .catch((error) => {
         console.log(error);

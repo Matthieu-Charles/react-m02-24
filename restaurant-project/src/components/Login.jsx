@@ -18,7 +18,6 @@ const Login = () => {
     const password = e.target.password.value;
     loginUser(email, password)
       .then((result) => {
-        console.log(result);
         navigate("/");
       })
       .catch((error) => console.log(error.message));

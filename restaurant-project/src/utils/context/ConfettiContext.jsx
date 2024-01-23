@@ -6,7 +6,6 @@ export const ConfettiProvider = ({ children }) => {
   const [confetti, setConfetti] = useState(false);
 
   function onClickOnSwitch() {
-    console.log("onClickConfetti");
     setConfetti(!confetti);
   }
 

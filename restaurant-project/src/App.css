@@ -19,8 +19,13 @@ nav {
 }
 
 .carousel {
-  width: 50vw;
+  width: 75vw;
   margin: auto;
+  box-shadow: 2px 3px 5px 5px grey;
+}
+
+.carousel-item > img {
+  width: 100%;
 }
 
 .d-flex {
@@ -95,4 +100,9 @@ canvas {
   to {
     box-shadow: 0 0 20px 20px #ffcc00;
   }
+}
+
+.loading-div {
+  width: 600px !important;
+  height: 455px !important;
 }

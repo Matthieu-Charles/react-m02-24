@@ -40,7 +40,6 @@ export async function addItem(url = "", item) {
       body: JSON.stringify(item),
     });
     const resultat = await reponse.json();
-    console.log("Réussite :", resultat);
   } catch (erreur) {
     console.error("Impossible de récupérer la resource");
   }
@@ -58,7 +57,6 @@ export async function modifyItem(url, modifiedItem) {
       }),
     });
     const resultat = await reponse.json();
-    console.log("Réussite :", resultat);
   } catch (erreur) {
     console.error("Impossible de récupérer la resource");
   }
@@ -73,7 +71,6 @@ export async function deleteItem(url) {
       },
     });
     const resultat = await reponse.json();
-    console.log("Réussite :", resultat);
   } catch (erreur) {
     console.error("Impossible de récupérer la resource");
   }

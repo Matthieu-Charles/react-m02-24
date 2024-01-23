@@ -19,7 +19,6 @@ function HeaderNav() {
   const handleSignOut = () => {
     logOut()
       .then(() => {
-        console.log("User logged out successfully");
         navigate("/login");
       })
       .catch((error) => console.error(error));

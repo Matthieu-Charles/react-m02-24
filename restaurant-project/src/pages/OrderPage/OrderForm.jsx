@@ -21,7 +21,6 @@ function OrderForm() {
   } = useForm();
 
   const onValid = (data) => {
-    console.log("Valide! : ", data);
     handleShow();
   };
   const onError = (errors) => {

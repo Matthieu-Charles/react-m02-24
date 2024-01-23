@@ -2,8 +2,8 @@
   "meals": [
     {
       "id": "s54d",
-      "title": "Salade au TonTon",
-      "country": "Nigeria",
+      "title": "Salade au TonTonTon",
+      "country": "Nigeriaa",
       "imageLink": "src/assets/meal1.jpg",
       "presentation": "Le bon petit plaplat du tonton qui a récupéré cette formidable recette d'un ami du Nigéria!",
       "ingredients": [
@@ -12,15 +12,15 @@
         "poivre",
         "sel"
       ],
-      "price": 12,
+      "price": "12",
       "category": "plat"
     },
     {
       "id": "q45z",
       "title": "Poulet de Taramamama",
-      "country": "Ile de Wight",
+      "country": "Ile de Madagascar",
       "imageLink": "src/assets/meal2.jpg",
-      "presentation": "Un bon petit poulet tout sympa qui ravira vos papilles",
+      "presentation": "Un bon petit poulet tout sympa qui ravira vos poulets",
       "ingredients": [
         "poulet",
         "saumon",
@@ -104,52 +104,30 @@
       "category": "entrée"
     },
     {
-      "id": "5862",
-      "title": "Test Plat",
-      "country": "Pays",
-      "presentation": "la présentation",
-      "price": "56",
-      "category": "dessert",
+      "id": "9ade",
+      "title": "fez",
+      "country": "fezj",
+      "presentation": "ezfopk",
+      "price": "123",
+      "category": "plat",
       "ingredients": [
-        "ingr1",
-        "ing2",
-        "ingr4"
+        "ezfzef",
+        "1"
+      ],
+      "imageLink": "src/assets/meal0.jpg"
+    },
+    {
+      "id": "3c64",
+      "title": "ed",
+      "country": "fez",
+      "presentation": "ezf",
+      "price": "40",
+      "category": "entree",
+      "ingredients": [
+        "ez"
       ],
       "imageLink": "src/assets/meal1.jpg"
     }
   ],
-  "cart": [
-    {
-      "id": "q45z",
-      "title": "Poulet de Taramamama",
-      "country": "Ile de Wight",
-      "imageLink": "src/assets/meal2.jpg",
-      "presentation": "Un bon petit poulet tout sympa qui ravira vos papilles",
-      "ingredients": [
-        "poulet",
-        "saumon",
-        "patate Rouge",
-        "pain"
-      ],
-      "price": "28",
-      "category": "dessert",
-      "quantity": 4
-    },
-    {
-      "id": "s54d",
-      "title": "Salade au TonTon",
-      "country": "Nigeria",
-      "imageLink": "src/assets/meal1.jpg",
-      "presentation": "Le bon petit plaplat du tonton qui a récupéré cette formidable recette d'un ami du Nigéria!",
-      "ingredients": [
-        "salade",
-        "thon",
-        "poivre",
-        "sel"
-      ],
-      "price": 12,
-      "category": "plat",
-      "quantity": 3
-    }
-  ]
+  "cart": []
 }

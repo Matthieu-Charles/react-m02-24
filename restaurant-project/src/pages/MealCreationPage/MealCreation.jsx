@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import Button from "react-bootstrap/Button";
 import { MealsContext } from "../../utils/context/MealsContext";
 import { useNavigate } from "react-router-dom";
@@ -7,12 +6,12 @@ import Form from "react-bootstrap/Form";
 import { useForm } from "react-hook-form";
 
 function MealCreation() {
-  const { meals, onCreateMeal } = useContext(MealsContext);
+  const { onCreateMeal } = useContext(MealsContext);
   const navigate = useNavigate();
-  const handleOnClick = () => navigate("/carte");
 
   const onValid = (data) => {
     onCreateMeal(data);
+    navigate("/gestion");
   };
   const onError = (errors) => {
     console.log("Errors: ", errors);

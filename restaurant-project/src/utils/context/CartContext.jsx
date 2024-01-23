@@ -31,7 +31,6 @@ export const CartProvider = ({ children }) => {
   }
 
   async function onAddItemToCart(mealToAdd) {
-    console.log("onAddItemToCart");
     const indexIfInCart = cartItems.findIndex(
       (meal) => meal.id === mealToAdd.id
     );
@@ -50,7 +49,6 @@ export const CartProvider = ({ children }) => {
   }
 
   async function onDeleteItemOfCart(mealToDelete) {
-    console.log("onDeleteItemOfCart");
     const indexIfInCart = cartItems.findIndex(
       (meal) => meal.id === mealToDelete.id
     );
