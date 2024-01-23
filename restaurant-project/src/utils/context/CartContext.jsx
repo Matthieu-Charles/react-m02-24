@@ -66,6 +66,31 @@ export const CartProvider = ({ children }) => {
     setCall(!call);
   }
 
+  async function onModifyItemQuantityOfCart(mealToModify, plusOrMinus) {
+    const indexIfInCart = cartItems.findIndex(
+      (meal) => meal.id === mealToModify.id
+    );
+    const modifiedItem = { ...cartItems[indexIfInCart] };
+    if (indexIfInCart >= 0) {
+      if (plusOrMinus === "plus") {
+        modifiedItem.quantity++;
+      } else {
+        if (mealToModify.quantity > 1) {
+          modifiedItem.quantity--;
+        } else {
+          await deleteItem(`http://localhost:3000/cart/${mealToModify.id}`);
+          setCall(!call);
+          return;
+        }
+      }
+    }
+    await modifyItem(
+      `http://localhost:3000/cart/${mealToModify.id}`,
+      modifiedItem
+    );
+    setCall(!call);
+  }
+
   return (
     <CartContext.Provider
       value={{
@@ -73,12 +98,7 @@ export const CartProvider = ({ children }) => {
         cartValue,
         onAddItemToCart,
         onDeleteItemOfCart,
-        // onSortByAuthorClick,
-        // orderAscOrDesc,
-        // onDeleteBook,
-        // onModifyBook,
-        // onCreateBook,
-        // onNameSearch,
+        onModifyItemQuantityOfCart,
       }}
     >
       {children}

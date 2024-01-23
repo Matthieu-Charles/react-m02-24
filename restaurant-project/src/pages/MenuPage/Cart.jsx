@@ -7,7 +7,12 @@ import { CartContext } from "../../utils/context/CartContext";
 import { Link } from "react-router-dom";
 
 function Cart({ isOrderContext }) {
-  const { cartItems, cartValue, onDeleteItemOfCart } = useContext(CartContext);
+  const {
+    cartItems,
+    cartValue,
+    onDeleteItemOfCart,
+    onModifyItemQuantityOfCart,
+  } = useContext(CartContext);
 
   return (
     <Card>
@@ -15,16 +20,32 @@ function Cart({ isOrderContext }) {
       <Card.Body>
         <ListGroup variant="flush">
           {cartItems?.map((cartItem) => (
-            <ListGroup.Item key={cartItem?.id} className="d-flex">
+            <ListGroup.Item key={cartItem?.id} className="d-flex container">
               <div>
-                {" "}
                 <CloseButton
                   className="btn-sm me-2"
                   onClick={() => onDeleteItemOfCart(cartItem)}
                 ></CloseButton>
               </div>
               <div>
-                {" "}
+                <Button
+                  className="btn-sm"
+                  onClick={() => onModifyItemQuantityOfCart(cartItem, "plus")}
+                >
+                  ➕
+                </Button>
+                {cartItem.quantity > 0 && (
+                  <Button
+                    className="btn-sm"
+                    onClick={() =>
+                      onModifyItemQuantityOfCart(cartItem, "minus")
+                    }
+                  >
+                    ➖
+                  </Button>
+                )}
+              </div>
+              <div>
                 <span className="bold">{cartItem?.quantity} x </span>
                 {cartItem?.title}
               </div>
